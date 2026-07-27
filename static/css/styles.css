@@ -1,0 +1,2506 @@
+/* ===================================================
+   ForecastingIQ v2.0
+   Professional Business Intelligence Dashboard
+=================================================== */
+
+/* ==========================
+   GOOGLE RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#0f172a;
+
+    color:#f8fafc;
+
+    min-height:100vh;
+
+    display:flex;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root{
+
+    --primary:#2563eb;
+
+    --secondary:#1e40af;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --purple:#8b5cf6;
+
+    --dark:#0f172a;
+
+    --dark2:#1e293b;
+
+    --dark3:#334155;
+
+    --light:#f8fafc;
+
+    --text:#cbd5e1;
+
+    --border:#334155;
+
+    --shadow:0 15px 35px rgba(0,0,0,.35);
+
+    --radius:18px;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#3b82f6;
+
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+/* ==========================
+   IMAGES
+========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================
+   LISTS
+========================== */
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ==========================
+   HEADINGS
+========================== */
+
+h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+h3{
+
+    font-size:20px;
+
+}
+
+h4{
+
+    font-size:16px;
+
+}
+
+p{
+
+    color:var(--text);
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+   SMOOTH ANIMATION
+========================== */
+
+*{
+
+    transition:
+
+        background .3s,
+
+        color .3s,
+
+        transform .3s,
+
+        box-shadow .3s;
+
+}
+
+/* ==========================================
+SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    background:#111827;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+/* Logo */
+
+.logo-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.logo{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:12px;
+
+}
+
+.logo-section h2{
+
+    color:white;
+
+    font-size:22px;
+
+    margin:0;
+
+}
+
+.logo-section span{
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+/* User */
+
+.user-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:35px;
+
+}
+
+.user-avatar{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+}
+
+.user-card h3{
+
+    color:white;
+
+    font-size:16px;
+
+    margin:0;
+
+}
+
+.user-card p{
+
+    color:#94a3b8;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+}
+
+/* Menu */
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.sidebar-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar-menu a i{
+
+    width:22px;
+
+    font-size:18px;
+
+}
+
+.sidebar-menu a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateX(6px);
+
+}
+
+.sidebar-menu .active{
+
+    background:#2563eb;
+
+    color:white;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+
+}
+
+/* Bottom */
+
+.sidebar-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.sidebar-bottom a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar-bottom a:hover{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+/* ==========================================
+TOP HEADER
+========================================== */
+
+.top-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+    background:#1e293b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:22px 28px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.header-left h1{
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:5px;
+
+}
+
+.header-left p{
+
+    color:#94a3b8;
+
+}
+
+.header-center{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.search-box{
+
+    width:100%;
+
+    max-width:450px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#111827;
+
+    border-radius:50px;
+
+    padding:14px 20px;
+
+}
+
+.search-box i{
+
+    color:#94a3b8;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.date-box{
+
+    display:flex;
+
+    gap:8px;
+
+    color:#cbd5e1;
+
+}
+
+.action-btn{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:#334155;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.action-btn:hover{
+
+    background:#3b82f6;
+
+}
+
+.action-btn.primary{
+
+    background:#2563eb;
+
+}
+
+.notification{
+
+    position:relative;
+
+    font-size:22px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.badge{
+
+    position:absolute;
+
+    top:-8px;
+
+    right:-8px;
+
+    background:#ef4444;
+
+    color:white;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:10px;
+
+}
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.avatar{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.profile h4{
+
+    color:white;
+
+    margin:0;
+
+}
+
+.profile small{
+
+    color:#94a3b8;
+
+}
+
+/* ===================================================
+   MAIN CONTENT
+=================================================== */
+
+.main-content{
+    flex:1;
+    margin-left:300px;
+    padding:25px;
+    width:calc(100% - 300px);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   PAGE TITLE
+========================== */
+
+.page-title{
+
+    margin:30px 0;
+
+}
+
+.page-title h1{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.page-title p{
+
+    color:var(--text);
+
+}
+
+/* ===================================================
+   TOP HEADER
+=================================================== */
+
+.top-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    gap:20px;
+
+}
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.search-box{
+
+    flex:1;
+
+    max-width:550px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:0 20px;
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+}
+
+.search-box i{
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:15px;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+.search-box input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* Hover */
+
+.search-box:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 20px rgba(37,99,235,.15);
+
+}
+
+/* ==========================
+   HEADER RIGHT
+========================== */
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+/* ==========================
+   NOTIFICATION BUTTON
+========================== */
+
+.notification-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:#1e293b;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    border:1px solid var(--border);
+
+}
+
+.notification-btn:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   PROFILE
+========================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#1e293b;
+
+    padding:10px 18px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+}
+
+.profile img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.profile h4{
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:3px;
+
+}
+
+.profile small{
+
+    color:#94a3b8;
+
+    font-size:12px;
+
+}
+
+.profile:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================
+   KPI GRID
+========================================== */
+
+.kpi-cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin:25px 0;
+
+}
+
+/* ==========================================
+   KPI CARD
+========================================== */
+
+.kpi-card{
+
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:18px;
+    min-height:210px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.3s;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-5px);
+    border-color:#3b82f6;
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.kpi-icon{
+
+    width:55px;
+    height:55px;
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+.sales-card .kpi-icon{
+    background:#2563eb;
+}
+
+.revenue-card .kpi-icon{
+    background:#22c55e;
+}
+
+.profit-card .kpi-icon{
+    background:#8b5cf6;
+}
+
+.customers-card .kpi-icon{
+    background:#f59e0b;
+}
+
+.growth-card .kpi-icon{
+    background:#06b6d4;
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.kpi-card h4{
+
+    color:#94a3b8;
+    font-size:15px;
+    margin:0;
+
+}
+
+.kpi-card h2{
+
+    color:#fff;
+    font-size:32px;
+    margin:10px 0;
+
+    word-break:break-word;
+
+}
+
+/* ==========================================
+   GROWTH
+========================================== */
+
+.kpi-growth{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    color:#22c55e;
+
+    font-size:14px;
+    font-weight:600;
+
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.kpi-progress{
+
+    margin-top:14px;
+
+    width:100%;
+    height:8px;
+
+    background:#334155;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+    border-radius:50px;
+
+}
+
+.sales-progress{
+
+    width:82%;
+    background:#2563eb;
+
+}
+
+.revenue-progress{
+
+    width:74%;
+    background:#22c55e;
+
+}
+
+.profit-progress{
+
+    width:66%;
+    background:#8b5cf6;
+
+}
+
+.customers-progress{
+
+    width:79%;
+    background:#f59e0b;
+
+}
+
+.growth-progress{
+
+    width:91%;
+    background:#06b6d4;
+
+}
+
+/* ==========================================
+AI BUSINESS INSIGHTS
+========================================== */
+
+.insights-section{
+
+    margin-top:25px;
+    margin-bottom:30px;
+
+}
+
+.insights-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.insights-header h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:5px;
+
+}
+
+.insights-header p{
+
+    color:#94a3b8;
+
+}
+
+.refresh-ai{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.refresh-ai:hover{
+
+    background:#3b82f6;
+
+    transform:translateY(-3px);
+
+}
+
+.insights-grid{
+    display:grid;
+    grid-template-columns:1.7fr 1fr;
+    gap:20px;
+    align-items:start;
+    margin-top:20px;
+}
+
+.insights-card{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.insights-chart-card{
+
+    background:#1e293b;
+    border-radius:20px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    height:420px;
+
+}
+
+.insights-chart-card h3{
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+#insightsList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.insight{
+
+    background:#111827;
+
+    border-left:5px solid #2563eb;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    color:#e2e8f0;
+
+    transition:.3s;
+
+}
+
+.insight:hover{
+
+    transform:translateX(8px);
+
+    border-left-color:#22c55e;
+
+}
+
+.insight strong{
+
+    color:white;
+
+}
+
+#insightsChart{
+
+    width:100% !important;
+    max-width:280px;
+    height:280px !important;
+
+}
+
+/* ==========================================
+ECONOMIC INDICATORS
+========================================== */
+
+.economic-section{
+
+    margin:35px 0;
+
+}
+
+.economic-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.economic-header h2{
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.economic-header span{
+
+    color:#94a3b8;
+
+}
+
+.economic-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.economic-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.3s;
+
+}
+
+.economic-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563eb;
+
+}
+
+.economic-card h4{
+
+    color:#94a3b8;
+
+    margin-bottom:12px;
+
+}
+
+.economic-card h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.neutral{
+
+    color:#fbbf24;
+
+    font-weight:600;
+
+}
+
+.negative{
+
+    color:#ef4444;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+BUSINESS GOALS
+========================================== */
+
+.goals-section{
+
+    margin:35px 0;
+
+}
+
+.goals-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.goals-header h2{
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.goals-header span{
+
+    color:#94a3b8;
+
+}
+
+.goals-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+.goal{
+
+    margin-bottom:25px;
+
+}
+
+.goal:last-child{
+
+    margin-bottom:0;
+
+}
+
+.goal-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+}
+
+.goal-info span{
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.goal-info strong{
+
+    color:#3b82f6;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#334155;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:50px;
+
+}
+
+.revenue{
+
+    width:85%;
+
+    background:#22c55e;
+
+}
+
+.sales{
+
+    width:78%;
+
+    background:#3b82f6;
+
+}
+
+.profit{
+
+    width:95%;
+
+    background:#8b5cf6;
+
+}
+
+.customers{
+
+    width:70%;
+
+    background:#f59e0b;
+
+}
+
+.market{
+
+    width:82%;
+
+    background:#06b6d4;
+
+}
+
+.ai{
+
+    width:97%;
+
+    background:#ec4899;
+
+}
+
+/* ==========================================
+KPI CARDS
+========================================== */
+
+.kpi-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.kpi-card{
+
+    background:#1e293b;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    min-height:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    border-top:5px solid #2563eb;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.30);
+
+}
+
+.kpi-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+}
+
+.kpi-card h4{
+
+    color:#94a3b8;
+
+    margin-top:20px;
+
+    font-size:16px;
+
+}
+
+.kpi-card h2{
+
+    color:white;
+
+    font-size:2.2rem;
+
+    margin:20px 0;
+
+    word-break:break-word;
+
+}
+
+.kpi-growth{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#22c55e;
+
+    font-weight:600;
+
+}
+
+.kpi-section{
+
+    margin-bottom:25px;
+
+}
+
+.kpi-progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#334155;
+
+    border-radius:50px;
+
+    margin-top:18px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    border-radius:50px;
+
+}
+
+.sales-progress{width:82%;background:#2563eb;}
+.revenue-progress{width:91%;background:#22c55e;}
+.profit-progress{width:78%;background:#8b5cf6;}
+.customer-progress{width:70%;background:#f59e0b;}
+.growth-progress{width:95%;background:#ec4899;}
+
+/* ===================================================
+   CHART SECTION
+=================================================== */
+
+.chart-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================
+   CHART CARD
+========================== */
+
+.chart-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--primary);
+
+}
+
+.chart-card.large{
+
+    grid-column:span 2;
+
+}
+
+/* ==========================
+   CARD HEADER
+========================== */
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.card-header h3{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.card-header button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    font-size:13px;
+
+    font-weight:500;
+
+}
+
+.card-header button:hover{
+
+    background:#3b82f6;
+
+}
+
+/* ==========================
+   CHART AREA
+========================== */
+
+.chart-card canvas{
+
+    width:100%;
+
+    height:320px !important;
+
+}
+
+/* ===================================================
+   BUSINESS SUMMARY
+=================================================== */
+
+.summary-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.summary-card:hover{
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================
+   SUMMARY ITEMS
+========================== */
+
+.summary-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    border:1px solid #334155;
+
+}
+
+.summary-item span{
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+}
+
+.summary-item strong{
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   HOVER EFFECT
+========================== */
+
+.summary-item:hover{
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    transform:translateX(5px);
+
+}
+
+.summary-item:hover span,
+
+.summary-item:hover strong{
+
+    color:white;
+
+}
+
+/* ===================================================
+   TABLES
+=================================================== */
+
+.tables-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+
+.table-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    overflow-x:auto;
+
+}
+
+.table-card:hover{
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+}
+
+table thead{
+
+    background:#0f172a;
+
+}
+
+table th{
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:14px;
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+table td{
+
+    padding:18px;
+
+    color:#cbd5e1;
+
+    border-bottom:1px solid #334155;
+
+    font-size:14px;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#0f172a;
+
+}
+
+/* ==========================
+   STATUS BADGES
+========================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.completed{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+}
+
+.pending{
+
+    background:rgba(245,158,11,.15);
+
+    color:#f59e0b;
+
+}
+
+.cancelled{
+
+    background:rgba(239,68,68,.15);
+
+    color:#ef4444;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    padding:20px;
+
+    border-top:1px solid #334155;
+
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+=================================================== */
+
+@media(max-width:1200px){
+
+    .kpi-cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .chart-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-card.large{
+
+        grid-column:span 1;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:80px;
+
+        padding:20px 10px;
+
+    }
+
+    .logo h2{
+
+        display:none;
+
+    }
+
+    .menu li a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    .menu li a i{
+
+        font-size:20px;
+
+        margin:0;
+
+    }
+
+    .logout a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    .logout a i{
+
+        font-size:20px;
+
+    }
+
+    .main-content{
+
+        margin-left:80px;
+
+        width:calc(100% - 80px);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .search-box{
+
+        max-width:100%;
+
+    }
+
+    .header-right{
+
+        justify-content:space-between;
+
+    }
+
+    .kpi-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    body{
+
+        display:block;
+
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .logo h2{
+
+        display:block;
+
+    }
+
+    .menu{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .menu li a{
+
+        font-size:14px;
+
+        justify-content:flex-start;
+
+    }
+
+    .logout{
+
+        display:none;
+
+    }
+
+    .main-content{
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .profile{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    table{
+
+        min-width:700px;
+
+    }
+
+}
+
+/* ==========================================
+   Fade Animation
+========================================== */
+
+.fade{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:all .8s ease;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================
+THEME TOGGLE BUTTON
+========================================== */
+
+.theme-toggle{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.theme-toggle:hover{
+
+    transform:rotate(180deg);
+
+    background:#3b82f6;
+
+}
+
+/* ==========================================
+   Light Mode
+========================================== */
+
+body.light-mode{
+
+    background:#f4f7fb;
+
+    color:#111827;
+
+}
+
+body.light-mode .sidebar{
+
+    background:white;
+
+}
+
+body.light-mode .main-content{
+
+    background:#f4f7fb;
+
+}
+
+body.light-mode .card,
+body.light-mode .chart-card,
+body.light-mode .summary-card,
+body.light-mode .table-card,
+body.light-mode .profile,
+body.light-mode .search-box{
+
+    background:white;
+
+    color:#111827;
+
+}
+
+body.light-mode table th{
+
+    background:#2563eb;
+
+}
+
+body.light-mode .page-title h1{
+
+    color:#111827;
+
+}
+
+/* ===============================
+   Chart Filter Buttons
+================================= */
+
+.chart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.chart-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.chart-buttons button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.chart-buttons button:hover{
+    background:#1d4ed8;
+}
+
+.chart-buttons button.active{
+    background:#0f172a;
+}
+
+/* ==========================
+AI INSIGHTS
+========================== */
+
+.insights-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap: 25px;
+
+}
+
+.insight-chart{
+
+    width:260px;
+
+    height:260px;
+
+}
+
+.insight-chart canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+/* Sidebar Scrollbar */
+
+.sidebar::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+
+    background:#60a5fa;
+
+}
+
+/* ==========================================
+LIGHT MODE
+========================================== */
+
+body.light-mode{
+
+    background:#f4f7fb;
+
+    color:#111827;
+
+}
+
+body.light-mode .sidebar{
+
+    background:#ffffff;
+
+    border-right:1px solid #e5e7eb;
+
+}
+
+body.light-mode .card{
+
+    background:#ffffff;
+
+    color:#111827;
+
+}
+
+body.light-mode .chart-card{
+
+    background:#ffffff;
+
+    color:#111827;
+
+}
+
+body.light-mode .summary-card{
+
+    background:#ffffff;
+
+    color:#111827;
+
+}
+
+body.light-mode .top-header{
+
+    background:#ffffff;
+
+}
+
+body.light-mode .search-box{
+
+    background:#f3f4f6;
+
+}
+
+body.light-mode .card-content h2{
+
+    color:#111827;
+
+}
+
+body.light-mode .card-header h3{
+
+    color:#111827;
+
+}
+
+body.light-mode .logo-section h2{
+
+    color:#111827;
+
+}
+
+body.light-mode .sidebar-menu a{
+
+    color:#374151;
+
+}
+
+body.light-mode .sidebar-menu a:hover{
+
+    color:white;
+
+}
+
+body.light-mode .user-card{
+
+    background:#f3f4f6;
+
+}
+
+body.light-mode .profile h4{
+
+    color:#111827;
+
+}
+
+body.light-mode .notification{
+
+    color:#111827;
+
+}

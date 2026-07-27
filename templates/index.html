@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ForecastingIQ | Business Intelligence Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/insights.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <!-- JAVASCRIPT FILES -->
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/clock.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/forecast.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/insights.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/filters.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tables.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/refresh.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+
+<body>
+
+    <!-- ==========================
+            SIDEBAR
+    =========================== -->
+
+<aside class="sidebar">
+
+    <!-- Logo -->
+
+    <div class="logo-section">
+
+        <img src="static/images/logo.png" alt="ForecastingIQ Logo" class="logo">
+
+        <div>
+
+            <h2>ForecastingIQ</h2>
+
+            <span>Business Intelligence</span>
+
+        </div>
+
+    </div>
+
+    <!-- User -->
+
+    <div class="user-card">
+
+        <div class="user-avatar">
+            OS
+        </div>
+
+        <div>
+
+            <h3>Olwethu Sibiya</h3>
+            <p>Business Analyst</p>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-menu">
+
+        <a href="#" class="active">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-chart-pie"></i>
+            <span>Analytics</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-brain"></i>
+            <span>Forecasting</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-users"></i>
+            <span>Customers</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-dollar-sign"></i>
+            <span>Revenue</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-lightbulb"></i>
+            <span>AI Insights</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-file-alt"></i>
+            <span>Reports</span>
+        </a>
+
+    </nav>
+
+    <!-- Bottom -->
+
+    <div class="sidebar-bottom">
+
+        <a href="#">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+</aside>
+
+    <!-- ==========================
+            MAIN CONTENT
+    =========================== -->
+
+    <div class="main-content">
+
+        <!-- HEADER -->
+
+ <header class="top-header">
+
+    <div class="header-left">
+
+        <div>
+            <h1>Business Intelligence Dashboard</h1>
+            <p>Welcome back, Administrator 👋</p>
+        </div>
+
+    </div>
+
+    <button id="themeToggle" class="theme-toggle">
+    <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="header-center">
+
+        <div class="search-box">
+
+            <i class="fas fa-search"></i>
+
+            <input
+                type="text"
+                placeholder="Search reports, products or customers..."
+            >
+
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <div class="date-box">
+
+            <i class="fas fa-calendar-alt"></i>
+
+            <span id="currentDate"></span>
+
+        </div>
+
+        <button class="action-btn">
+
+            <i class="fas fa-sync-alt"></i>
+
+            Refresh
+
+        </button>
+
+        <button class="action-btn primary">
+
+            <i class="fas fa-file-export"></i>
+
+            Export
+
+        </button>
+
+        <div class="notification">
+
+            <i class="fas fa-bell"></i>
+
+            <span class="badge">3</span>
+
+        </div>
+
+        <div class="profile">
+
+            <div class="avatar">AD</div>
+
+            <div>
+
+                <h4>Administrator</h4>
+
+                <small>Business Analyst</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>      
+
+        <!-- PAGE TITLE -->
+
+        <section class="page-title">
+
+            <h1>
+
+                Business Intelligence Dashboard
+
+            </h1>
+
+            <p>
+
+                Welcome back. Here's an overview of your business performance.
+
+            </p>
+
+        </section>
+
+        <!-- KPI CARDS START HERE -->
+
+        <section class="kpi-section">
+
+        <div class="kpi-card sales">
+
+            <div class="kpi-top">
+                <div class="kpi-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+
+                <div class="kpi-growth positive">
+                    <i class="fas fa-arrow-up"></i>
+                    12.8%
+                </div>
+            </div>
+
+            <h4>Total Sales</h4>
+
+            <h2 id="sales">0</h2>
+
+            <div class="progress">
+                <div class="progress-fill sales-fill"></div>
+            </div>
+
+        </div>
+
+
+        <div class="kpi-card revenue">
+
+            <div class="kpi-top">
+
+                <div class="kpi-icon">
+                    <i class="fas fa-sack-dollar"></i>
+                </div>
+
+                <div class="kpi-growth positive">
+                    +18.3%
+                </div>
+
+            </div>
+
+            <h4>Total Revenue</h4>
+
+            <h2 id="revenue">R0</h2>
+
+            <div class="progress">
+                <div class="progress-fill revenue-fill"></div>
+            </div>
+
+        </div>
+
+
+        <div class="kpi-card profit">
+
+            <div class="kpi-top">
+
+                <div class="kpi-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+
+                <div class="kpi-growth positive">
+                    +9.8%
+                </div>
+
+            </div>
+
+            <h4>Net Profit</h4>
+
+            <h2 id="profit">R0</h2>
+
+            <div class="progress">
+                <div class="progress-fill profit-fill"></div>
+            </div>
+
+        </div>
+
+
+        <div class="kpi-card customers">
+
+            <div class="kpi-top">
+
+                <div class="kpi-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+
+                <div class="kpi-growth positive">
+                    +6.2%
+                </div>
+
+            </div>
+
+            <h4>Customers</h4>
+
+            <h2 id="customers">0</h2>
+
+            <div class="progress">
+                <div class="progress-fill customer-fill"></div>
+            </div>
+
+        </div>
+
+
+        <div class="kpi-card growth">
+
+            <div class="kpi-top">
+
+                <div class="kpi-icon">
+                    <i class="fas fa-arrow-trend-up"></i>
+                </div>
+
+                <div class="kpi-growth positive">
+                    Business
+                </div>
+
+            </div>
+
+            <h4>Growth</h4>
+
+            <h2 id="growth">0%</h2>
+
+            <div class="progress">
+                <div class="progress-fill growth-fill"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+        <!-- ==========================================
+        AI BUSINESS INSIGHTS
+        ========================================== -->
+
+        <section class="insights-section">
+
+            <div class="insights-header">
+
+                <div>
+
+                    <h2>🤖 AI Business Insights</h2>
+
+                    <p>Real-time recommendations based on your business performance</p>
+
+                </div>
+
+                <button class="refresh-ai">
+
+                    <i class="fas fa-robot"></i>
+
+                    Generate Insights
+
+                </button>
+
+            </div>
+
+            <div class="insights-grid">
+
+                <div class="insights-card">
+
+                    <div id="insightsList"></div>
+
+                </div>
+
+                <div class="insights-chart-card">
+
+                    <h3>Business Health Score</h3>
+
+                    <canvas id="insightsChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+        ECONOMIC INDICATORS
+        ========================================== -->
+
+        <section class="economic-section">
+
+            <div class="economic-header">
+
+                <h2>🌍 Economic Indicators</h2>
+
+                <span>South Africa • Live Dashboard</span>
+
+            </div>
+
+            <div class="economic-grid">
+
+                <div class="economic-card">
+
+                    <h4>Inflation Rate</h4>
+
+                    <h2 id="inflationRate">3.2%</h2>
+
+                    <p class="positive">▲ +0.2%</p>
+
+                </div>
+
+                <div class="economic-card">
+
+                    <h4>Repo Rate</h4>
+
+                    <h2 id="repoRate">7.25%</h2>
+
+                    <p class="neutral">Stable</p>
+
+                </div>
+
+                <div class="economic-card">
+
+                    <h4>Unemployment</h4>
+
+                    <h2 id="unemploymentRate">31.9%</h2>
+
+                    <p class="negative">▼ -0.4%</p>
+
+                </div>
+
+                <div class="economic-card">
+
+                    <h4>USD/ZAR</h4>
+
+                    <h2 id="exchangeRate">R18.45</h2>
+
+                    <p class="positive">▲ +0.10</p>
+
+                </div>
+
+                <div class="economic-card">
+
+                    <h4>GDP Growth</h4>
+
+                    <h2 id="gdpGrowth">1.4%</h2>
+
+                    <p class="positive">▲ +0.3%</p>
+
+                </div>
+
+                <div class="economic-card">
+
+                    <h4>Consumer Price Index</h4>
+
+                    <h2 id="cpi">102.7</h2>
+
+                    <p class="positive">▲ +0.8%</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+        BUSINESS GOALS
+        ========================================== -->
+
+        <section class="goals-section">
+
+            <div class="goals-header">
+
+                <h2>🎯 Business Goals</h2>
+
+                <span>Performance Progress</span>
+
+            </div>
+
+            <div class="goals-card">
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>Revenue Growth</span>
+                        <strong>85%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill revenue"></div>
+                    </div>
+
+                </div>
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>Sales Target</span>
+                        <strong>78%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill sales"></div>
+                    </div>
+
+                </div>
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>Profit Target</span>
+                        <strong>95%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill profit"></div>
+                    </div>
+
+                </div>
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>Customer Acquisition</span>
+                        <strong>70%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill customers"></div>
+                    </div>
+
+                </div>
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>Market Share</span>
+                        <strong>82%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill market"></div>
+                    </div>
+
+                </div>
+
+                <div class="goal">
+
+                    <div class="goal-info">
+                        <span>AI Forecast Accuracy</span>
+                        <strong>97%</strong>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill ai"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>      
+
+        <!-- ==========================
+                CHART SECTION
+        =========================== -->
+
+        <section class="chart-grid">
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <h3>Sales Trend</h3>
+
+                    <div class="chart-buttons">
+                        <button id="weeklyBtn">Weekly</button>
+                        <button id="monthlyBtn" class="active">Monthly</button>
+                        <button id="yearlyBtn">Yearly</button>
+                    </div>
+
+                </div>
+
+                <canvas id="salesChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <div class="card-header">
+
+                    <h3>Revenue Trend</h3>
+
+                    <button>2026</button>
+
+                </div>
+
+                <canvas id="revenueChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <div class="card-header">
+
+                    <h3>Sales Forecast</h3>
+
+                    <button>AI Prediction</button>
+
+                </div>
+
+                <canvas id="forecastChart"></canvas>
+
+            </div>
+
+            <div class="summary-card">
+
+                <div class="card-header">
+
+                    <h3>Business Summary</h3>
+
+                </div>
+
+                <div class="summary-list">
+
+                    <div class="summary-item">
+
+                        <span>Total Orders</span>
+
+                        <strong>1,250</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Revenue Growth</span>
+
+                        <strong>+18%</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Profit Margin</span>
+
+                        <strong>33%</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Forecast Accuracy</span>
+
+                        <strong>97%</strong>
+
+                    </div>
+
+                    <div class="summary-item">
+
+                        <span>Customer Satisfaction</span>
+
+                        <strong>95%</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+                TABLES START HERE
+        =========================== -->
+
+        <section class="tables-section">
+
+                        <!-- ==========================
+                    Recent Sales
+            =========================== -->
+
+            <div class="table-card">
+
+                <div class="card-header">
+
+                    <h3>Recent Sales</h3>
+
+                    <button>View All</button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>#1001</td>
+                            <td>John Smith</td>
+                            <td>Laptop</td>
+                            <td>R15,000</td>
+                            <td><span class="status completed">Completed</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>#1002</td>
+                            <td>Sarah Jones</td>
+                            <td>Phone</td>
+                            <td>R8,500</td>
+                            <td><span class="status pending">Pending</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>#1003</td>
+                            <td>Michael Brown</td>
+                            <td>Tablet</td>
+                            <td>R4,800</td>
+                            <td><span class="status completed">Completed</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>#1004</td>
+                            <td>Emily Davis</td>
+                            <td>Headphones</td>
+                            <td>R2,000</td>
+                            <td><span class="status cancelled">Cancelled</span></td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ==========================
+                    Top Products
+            =========================== -->
+
+            <div class="table-card">
+
+                <div class="card-header">
+
+                    <h3>Top Products</h3>
+
+                    <button>Export</button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+                            <th>Units Sold</th>
+                            <th>Revenue</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Laptop</td>
+                            <td>120</td>
+                            <td>R1,800,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Phone</td>
+                            <td>215</td>
+                            <td>R1,720,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Tablet</td>
+                            <td>150</td>
+                            <td>R600,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Headphones</td>
+                            <td>480</td>
+                            <td>R960,000</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ==========================
+                    Monthly Performance
+            =========================== -->
+
+            <div class="table-card">
+
+                <div class="card-header">
+
+                    <h3>Monthly Performance</h3>
+
+                    <button>Download</button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Month</th>
+                            <th>Sales</th>
+                            <th>Revenue</th>
+                            <th>Profit</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>January</td>
+                            <td>980</td>
+                            <td>R180,000</td>
+                            <td>R58,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>February</td>
+                            <td>1,100</td>
+                            <td>R210,000</td>
+                            <td>R69,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>March</td>
+                            <td>1,250</td>
+                            <td>R245,000</td>
+                            <td>R82,000</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>April</td>
+                            <td>1,400</td>
+                            <td>R265,000</td>
+                            <td>R91,000</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+                FOOTER
+        =========================== -->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 ForecastingIQ | Business Intelligence Dashboard
+
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>

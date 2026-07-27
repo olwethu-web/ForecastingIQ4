@@ -1,0 +1,706 @@
+/* ==========================
+   PAGE TITLE
+========================== */
+
+.page-title{
+
+    margin:30px 0;
+
+}
+
+.page-title h1{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.page-title p{
+
+    color:var(--text);
+
+}
+
+/* ==========================================
+   KPI GRID
+========================================== */
+
+.kpi-section{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin:25px 0;
+
+}
+
+/* ==========================================
+   KPI CARD
+========================================== */
+
+.kpi-card{
+
+    background:#1e293b;
+
+    border:1px solid #334155;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    height:230px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+
+}
+
+.kpi-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* ==========================================
+KPI CARDS
+========================================== */
+
+.kpi-cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-top:25px;
+
+}
+
+.kpi-card{
+
+    background:#1e293b;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    min-height:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    border-top:5px solid #2563eb;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.30);
+
+}
+
+.kpi-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+}
+
+.kpi-card h4{
+
+    color:#94a3b8;
+
+    margin-top:20px;
+
+    font-size:16px;
+
+}
+
+.kpi-card h2{
+
+    color:white;
+
+    font-size:2.2rem;
+
+    margin:20px 0;
+
+    word-break:break-word;
+
+}
+
+.kpi-growth{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#22c55e;
+
+    font-weight:600;
+
+}
+
+.kpi-section{
+
+    margin-bottom:25px;
+
+}
+
+.kpi-progress{
+
+    margin-top:auto;
+
+    width:100%;
+    height:8px;
+
+    background:#334155;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    border-radius:50px;
+
+}
+
+.sales-progress{width:82%;background:#2563eb;}
+.revenue-progress{width:91%;background:#22c55e;}
+.profit-progress{width:78%;background:#8b5cf6;}
+.customer-progress{width:70%;background:#f59e0b;}
+.growth-progress{width:95%;background:#ec4899;}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.kpi-icon{
+
+    width:55px;
+    height:55px;
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+.sales-card .kpi-icon{
+    background:#2563eb;
+}
+
+.revenue-card .kpi-icon{
+    background:#22c55e;
+}
+
+.profit-card .kpi-icon{
+    background:#8b5cf6;
+}
+
+.customers-card .kpi-icon{
+    background:#f59e0b;
+}
+
+.growth-card .kpi-icon{
+    background:#06b6d4;
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.kpi-card h4{
+
+    color:#94a3b8;
+    font-size:15px;
+    margin:0;
+
+}
+
+.kpi-card h2{
+
+    color:#fff;
+    font-size:32px;
+    margin:10px 0;
+
+    word-break:break-word;
+
+}
+
+/* ==========================================
+   GROWTH
+========================================== */
+
+.kpi-growth{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    color:#22c55e;
+
+    font-size:14px;
+    font-weight:600;
+
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#334155;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:auto;
+
+}
+
+.progress-bar{
+
+    height:100%;
+    border-radius:50px;
+
+}
+
+.sales-progress{
+
+    width:82%;
+    background:#2563eb;
+
+}
+
+.revenue-progress{
+
+    width:74%;
+    background:#22c55e;
+
+}
+
+.profit-progress{
+
+    width:66%;
+    background:#8b5cf6;
+
+}
+
+.customers-progress{
+
+    width:79%;
+    background:#f59e0b;
+
+}
+
+.growth-progress{
+
+    width:91%;
+    background:#06b6d4;
+
+}
+
+/* ==========================================
+ECONOMIC INDICATORS
+========================================== */
+
+.economic-section{
+
+    margin:35px 0;
+
+}
+
+.economic-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.economic-header h2{
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.economic-header span{
+
+    color:#94a3b8;
+
+}
+
+.economic-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.economic-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.3s;
+
+}
+
+.economic-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#2563eb;
+
+}
+
+.economic-card h4{
+
+    color:#94a3b8;
+
+    margin-bottom:12px;
+
+}
+
+.economic-card h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+.neutral{
+
+    color:#fbbf24;
+
+    font-weight:600;
+
+}
+
+.negative{
+
+    color:#ef4444;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+BUSINESS GOALS
+========================================== */
+
+.goals-section{
+
+    margin:35px 0;
+
+}
+
+.goals-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.goals-header h2{
+
+    color:white;
+
+    font-size:26px;
+
+}
+
+.goals-header span{
+
+    color:#94a3b8;
+
+}
+
+.goals-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+}
+
+.goal{
+
+    margin-bottom:25px;
+
+}
+
+.goal:last-child{
+
+    margin-bottom:0;
+
+}
+
+.goal-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:10px;
+
+}
+
+.goal-info span{
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.goal-info strong{
+
+    color:#3b82f6;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:#334155;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:50px;
+
+}
+
+.revenue{
+
+    width:85%;
+
+    background:#22c55e;
+
+}
+
+.sales{
+
+    width:78%;
+
+    background:#3b82f6;
+
+}
+
+.profit{
+
+    width:95%;
+
+    background:#8b5cf6;
+
+}
+
+.customers{
+
+    width:70%;
+
+    background:#f59e0b;
+
+}
+
+.market{
+
+    width:82%;
+
+    background:#06b6d4;
+
+}
+
+.ai{
+
+    width:97%;
+
+    background:#ec4899;
+
+}
+
+/* ===================================================
+   BUSINESS SUMMARY
+=================================================== */
+
+.summary-card{
+
+    background:#1e293b;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.summary-card:hover{
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================
+   SUMMARY ITEMS
+========================== */
+
+.summary-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#0f172a;
+
+    border:1px solid #334155;
+
+}
+
+.summary-item span{
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+}
+
+.summary-item strong{
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   HOVER EFFECT
+========================== */
+
+.summary-item:hover{
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    transform:translateX(5px);
+
+}
+
+.summary-item:hover span,
+
+.summary-item:hover strong{
+
+    color:white;
+
+}
