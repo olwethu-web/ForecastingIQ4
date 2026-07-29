@@ -912,185 +912,165 @@ TOP HEADER
 
 }
 
-/* ==========================================
-   KPI GRID
-========================================== */
-
-.kpi-cards{
+.kpi-grid{
 
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    margin:25px 0;
+
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+
+    gap:25px;
 
 }
-
-/* ==========================================
-   KPI CARD
-========================================== */
 
 .kpi-card{
 
-    background:#1e293b;
-    border:1px solid #334155;
+    background:#1c2436;
+
     border-radius:18px;
-    padding:18px;
-    min-height:210px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    padding:25px;
 
-    transition:.3s;
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.05);
 
 }
+
+/* =========================
+   KPI CARD
+==========================*/
 
 .kpi-card:hover{
 
-    transform:translateY(-5px);
-    border-color:#3b82f6;
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.35);
 
 }
 
-/* ==========================================
-   ICON
-========================================== */
+.kpi-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
 
 .kpi-icon{
 
     width:55px;
+
     height:55px;
-    border-radius:14px;
+
+    border-radius:15px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
     font-size:22px;
 
-    margin-bottom:12px;
+}
+
+.growth{
+
+    padding:6px 12px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:bold;
 
 }
 
-.sales-card .kpi-icon{
-    background:#2563eb;
-}
+.positive{
 
-.revenue-card .kpi-icon{
-    background:#22c55e;
-}
+    background:#16a34a;
 
-.profit-card .kpi-icon{
-    background:#8b5cf6;
-}
-
-.customers-card .kpi-icon{
-    background:#f59e0b;
-}
-
-.growth-card .kpi-icon{
-    background:#06b6d4;
-}
-
-/* ==========================================
-   TEXT
-========================================== */
-
-.kpi-card h4{
-
-    color:#94a3b8;
-    font-size:15px;
-    margin:0;
+    color:white;
 
 }
 
-.kpi-card h2{
+.sparkline{
 
-    color:#fff;
-    font-size:32px;
-    margin:10px 0;
+    font-size:22px;
 
-    word-break:break-word;
+    color:#60a5fa;
+
+    margin:15px 0;
+
+    letter-spacing:2px;
 
 }
 
-/* ==========================================
-   GROWTH
-========================================== */
+.forecast-text{
 
-.kpi-growth{
+    color:#cbd5e1;
 
-    display:flex;
-    align-items:center;
-    gap:6px;
-
-    color:#22c55e;
+    margin-bottom:15px;
 
     font-size:14px;
-    font-weight:600;
-
-}
-
-/* ==========================================
-   PROGRESS BAR
-========================================== */
-
-.kpi-progress{
-
-    margin-top:14px;
-
-    width:100%;
-    height:8px;
-
-    background:#334155;
-
-    border-radius:50px;
-
-    overflow:hidden;
 
 }
 
 .progress-bar{
 
+    width:100%;
+
+    height:8px;
+
+    background:#2e374d;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
     height:100%;
-    border-radius:50px;
+
+    background:linear-gradient(90deg,#2563eb,#22c55e);
 
 }
 
-.sales-progress{
+.update-time{
 
-    width:82%;
-    background:#2563eb;
+    margin-top:15px;
 
-}
+    color:#94a3b8;
 
-.revenue-progress{
-
-    width:74%;
-    background:#22c55e;
+    font-size:12px;
 
 }
 
-.profit-progress{
+.kpi-card h4{
 
-    width:66%;
-    background:#8b5cf6;
+    color:#94a3b8;
 
-}
-
-.customers-progress{
-
-    width:79%;
-    background:#f59e0b;
+    margin-top:15px;
 
 }
 
-.growth-progress{
+.kpi-card h2{
 
-    width:91%;
-    background:#06b6d4;
+    color:white;
+
+    font-size:34px;
+
+    margin:10px 0;
 
 }
 
@@ -1098,161 +1078,132 @@ TOP HEADER
 AI BUSINESS INSIGHTS
 ========================================== */
 
-.insights-section{
+.executive-insights{
 
-    margin-top:25px;
-    margin-bottom:30px;
+    background:#1b2438;
+    border-radius:18px;
+    padding:30px;
+    margin-top:260px;
 
 }
 
-.insights-header{
+.executive-header{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin-bottom:25px;
 
 }
 
-.insights-header h2{
+.executive-header h2{
 
     color:white;
-
-    font-size:28px;
-
-    margin-bottom:5px;
+    font-size:30px;
 
 }
 
-.insights-header p{
-
-    color:#94a3b8;
-
-}
-
-.refresh-ai{
+.ai-status{
 
     background:#2563eb;
-
     color:white;
-
-    border:none;
-
-    padding:12px 22px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    padding:10px 18px;
+    border-radius:30px;
     font-weight:600;
 
 }
 
-.refresh-ai:hover{
+.status-dot{
 
-    background:#3b82f6;
-
-    transform:translateY(-3px);
-
-}
-
-.insights-grid{
-    display:grid;
-    grid-template-columns:1.7fr 1fr;
-    gap:20px;
-    align-items:start;
-    margin-top:20px;
-}
-
-.insights-card{
-
-    background:#1e293b;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background:#22c55e;
+    border-radius:50%;
+    margin-right:8px;
 
 }
 
-.insights-chart-card{
+.executive-summary{
 
-    background:#1e293b;
-    border-radius:20px;
-    padding:20px;
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    height:420px;
+    background:#121c33;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
 
 }
 
-.insights-chart-card h3{
+.executive-summary h3{
 
     color:white;
 
-    margin-bottom:20px;
+}
+
+.executive-summary p{
+
+    color:#d1d5db;
+    line-height:1.8;
 
 }
 
-#insightsList{
+.insight-grid{
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 
 }
 
-.insight{
+.insight-card{
 
-    background:#111827;
-
+    background:#121c33;
+    padding:25px;
+    border-radius:15px;
     border-left:5px solid #2563eb;
 
-    border-radius:12px;
+}
 
-    padding:18px;
+.insight-card.danger{
 
-    color:#e2e8f0;
-
-    transition:.3s;
+    border-left:5px solid #ef4444;
 
 }
 
-.insight:hover{
-
-    transform:translateX(8px);
-
-    border-left-color:#22c55e;
-
-}
-
-.insight strong{
+.insight-card h3{
 
     color:white;
+    margin-bottom:15px;
 
 }
 
-#insightsChart{
+.insight-card li{
 
-    width:100% !important;
-    max-width:280px;
-    height:280px !important;
+    color:#d1d5db;
+    margin-bottom:10px;
+
+}
+
+.recommendation-card{
+
+    background:#121c33;
+    margin-top:20px;
+    padding:25px;
+    border-radius:15px;
+    border-left:5px solid #22c55e;
+
+}
+
+.recommendation-card h3{
+
+    color:white;
+    margin-bottom:15px;
+
+}
+
+.recommendation-card li{
+
+    color:#d1d5db;
+    margin-bottom:10px;
 
 }
 
@@ -1511,148 +1462,6 @@ BUSINESS GOALS
     background:#ec4899;
 
 }
-
-/* ==========================================
-KPI CARDS
-========================================== */
-
-.kpi-cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-    gap:25px;
-
-    margin-bottom:35px;
-
-}
-
-.kpi-card{
-
-    background:#1e293b;
-
-    border-radius:22px;
-
-    padding:25px;
-
-    min-height:240px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    border-top:5px solid #2563eb;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-    transition:.35s;
-
-}
-
-.kpi-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(37,99,235,.30);
-
-}
-
-.kpi-icon{
-
-    width:65px;
-
-    height:65px;
-
-    border-radius:16px;
-
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:28px;
-
-}
-
-.kpi-card h4{
-
-    color:#94a3b8;
-
-    margin-top:20px;
-
-    font-size:16px;
-
-}
-
-.kpi-card h2{
-
-    color:white;
-
-    font-size:2.2rem;
-
-    margin:20px 0;
-
-    word-break:break-word;
-
-}
-
-.kpi-growth{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    color:#22c55e;
-
-    font-weight:600;
-
-}
-
-.kpi-section{
-
-    margin-bottom:25px;
-
-}
-
-.kpi-progress{
-
-    width:100%;
-
-    height:8px;
-
-    background:#334155;
-
-    border-radius:50px;
-
-    margin-top:18px;
-
-    overflow:hidden;
-
-}
-
-.progress-bar{
-
-    height:100%;
-
-    border-radius:50px;
-
-}
-
-.sales-progress{width:82%;background:#2563eb;}
-.revenue-progress{width:91%;background:#22c55e;}
-.profit-progress{width:78%;background:#8b5cf6;}
-.customer-progress{width:70%;background:#f59e0b;}
-.growth-progress{width:95%;background:#ec4899;}
 
 /* ===================================================
    CHART SECTION
@@ -1995,24 +1804,6 @@ tbody tr:hover{
     background:rgba(239,68,68,.15);
 
     color:#ef4444;
-
-}
-
-/* ==========================
-   FOOTER
-========================== */
-
-.footer{
-
-    margin-top:30px;
-
-    text-align:center;
-
-    color:#94a3b8;
-
-    padding:20px;
-
-    border-top:1px solid #334155;
 
 }
 
@@ -2502,5 +2293,2019 @@ body.light-mode .profile h4{
 body.light-mode .notification{
 
     color:#111827;
+
+}
+
+/*==========================================
+EXECUTIVE COMMAND CENTER
+==========================================*/
+
+.executive-command{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:30px;
+
+margin-bottom:35px;
+
+border-radius:22px;
+
+background:linear-gradient(145deg,#1c2436,#242f46);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 18px 40px rgba(0,0,0,.25);
+
+}
+
+.command-left h1{
+
+font-size:38px;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.command-left p{
+
+color:#94a3b8;
+
+font-size:16px;
+
+margin-bottom:20px;
+
+}
+
+.status-badges{
+
+display:flex;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+}
+
+.badge{
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.success{
+
+background:#16a34a;
+
+color:white;
+
+}
+
+.info{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.warning{
+
+background:#f59e0b;
+
+color:white;
+
+}
+
+.command-right{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.live-clock{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+color:white;
+
+font-weight:600;
+
+}
+
+.search-box{
+
+display:flex;
+
+align-items:center;
+
+padding:12px 18px;
+
+border-radius:15px;
+
+background:#111827;
+
+}
+
+.search-box input{
+
+background:none;
+
+border:none;
+
+outline:none;
+
+color:white;
+
+margin-left:10px;
+
+width:260px;
+
+}
+
+.command-btn{
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:14px;
+
+background:#2d3748;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.command-btn:hover{
+
+transform:translateY(-3px);
+
+background:#3b82f6;
+
+}
+
+.command-btn.primary{
+
+background:#2563eb;
+
+}
+
+.profile-card{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 18px;
+
+border-radius:16px;
+
+background:#111827;
+
+}
+
+.avatar{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:bold;
+
+font-size:18px;
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.profile-card small{
+
+display:block;
+
+color:#94a3b8;
+
+}
+
+/*==========================
+EXECUTIVE STATUS CENTER
+===========================*/
+
+.executive-status{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin:35px 0;
+
+}
+
+.status-card{
+
+background:linear-gradient(145deg,#1c2436,#252f45);
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.status-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.status-card i{
+
+font-size:30px;
+
+color:#3b82f6;
+
+margin-bottom:15px;
+
+}
+
+.status-card h4{
+
+color:#94a3b8;
+
+font-size:15px;
+
+margin-bottom:10px;
+
+}
+
+.status-card h2{
+
+color:white;
+
+font-size:34px;
+
+margin-bottom:15px;
+
+}
+
+.status-good{
+
+display:inline-block;
+
+padding:6px 14px;
+
+background:#16a34a;
+
+color:white;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.status-low{
+
+display:inline-block;
+
+padding:6px 14px;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.status-card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:4px;
+
+background:linear-gradient(90deg,#2563eb,#22c55e);
+
+}
+
+/*==================================
+AI COPILOT
+==================================*/
+
+.copilot-section{
+
+margin:40px 0;
+
+padding:30px;
+
+border-radius:22px;
+
+background:#1c2436;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.copilot-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.copilot-header h2{
+
+color:white;
+
+font-size:30px;
+
+}
+
+.copilot-header p{
+
+color:#94a3b8;
+
+margin-top:8px;
+
+}
+
+.copilot-btn{
+
+padding:14px 26px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2563eb;
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.copilot-btn:hover{
+
+transform:translateY(-3px);
+
+background:#3b82f6;
+
+}
+
+.copilot-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:25px;
+
+}
+
+.copilot-card{
+
+background:#111827;
+
+padding:24px;
+
+border-radius:18px;
+
+border-left:5px solid #2563eb;
+
+}
+
+.copilot-card h3{
+
+color:white;
+
+margin-bottom:18px;
+
+}
+
+.copilot-card p,
+
+.copilot-card li{
+
+color:#cbd5e1;
+
+line-height:1.8;
+
+}
+
+.copilot-card ul{
+
+padding-left:18px;
+
+}
+
+.summary{
+
+border-left-color:#22c55e;
+
+}
+
+.danger{
+
+border-left-color:#ef4444;
+
+}
+
+/*=========================================
+AI EXECUTIVE COPILOT
+=========================================*/
+
+.copilot-panel{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#1b2438,#202b42);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.copilot-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+.copilot-title{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.copilot-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+font-size:30px;
+
+color:white;
+
+}
+
+.copilot-title h2{
+
+color:white;
+
+margin-bottom:5px;
+
+}
+
+.copilot-title p{
+
+color:#94a3b8;
+
+}
+
+.analyze-btn{
+
+padding:14px 28px;
+
+border:none;
+
+border-radius:14px;
+
+background:#2563eb;
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.analyze-btn:hover{
+
+background:#3b82f6;
+
+transform:translateY(-3px);
+
+}
+
+.copilot-body{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+}
+
+.copilot-summary,
+
+.copilot-actions{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:18px;
+
+}
+
+.copilot-summary h3,
+
+.copilot-actions h3{
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+#aiSummary{
+
+color:#cbd5e1;
+
+line-height:1.9;
+
+font-size:16px;
+
+}
+
+.confidence-box{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+padding:18px;
+
+background:#1f2937;
+
+border-radius:12px;
+
+color:white;
+
+}
+
+.copilot-actions ul{
+
+padding-left:18px;
+
+}
+
+.copilot-actions li{
+
+margin-bottom:15px;
+
+color:#cbd5e1;
+
+}
+
+/*=========================================
+AI DECISION INTELLIGENCE
+=========================================*/
+
+.analysis-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-top:20px;
+
+}
+
+.analysis-card{
+
+background:#1f2937;
+
+padding:20px;
+
+border-radius:16px;
+
+border-left:4px solid #2563eb;
+
+transition:.3s;
+
+}
+
+.analysis-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+}
+
+.analysis-icon{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.analysis-card h4{
+
+color:white;
+
+margin-bottom:12px;
+
+}
+
+.analysis-card p{
+
+color:#cbd5e1;
+
+line-height:1.7;
+
+}
+
+/*=========================================
+AI BUSINESS SCORECARD
+=========================================*/
+
+.business-scorecard{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#1b2438,#222d42);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.scorecard-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.scorecard-header h2{
+
+color:white;
+
+}
+
+.overall-grade{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#16a34a;
+
+color:white;
+
+font-size:28px;
+
+font-weight:bold;
+
+}
+
+.score-item{
+
+display:grid;
+
+grid-template-columns:200px 1fr 60px;
+
+align-items:center;
+
+gap:20px;
+
+margin:18px 0;
+
+color:white;
+
+}
+
+.score-bar{
+
+height:12px;
+
+background:#2d3748;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.score-fill{
+
+height:100%;
+
+background:linear-gradient(90deg,#2563eb,#22c55e);
+
+border-radius:20px;
+
+transition:1s;
+
+}
+
+/*=========================================
+EXECUTIVE ANALYTICS CENTER
+=========================================*/
+
+.analytics-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#23314b);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.analytics-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.analytics-header h2{
+
+color:white;
+
+font-size:30px;
+
+}
+
+.analytics-live{
+
+background:#16a34a;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+color:white;
+
+animation:pulse 1.5s infinite;
+
+}
+
+.analytics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.analytics-card{
+
+padding:30px;
+
+background:#111827;
+
+border-radius:18px;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.analytics-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.analytics-card h3{
+
+color:#94a3b8;
+
+margin-bottom:20px;
+
+}
+
+.analytics-card h1{
+
+font-size:42px;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.analytics-card p{
+
+color:#cbd5e1;
+
+}
+
+@keyframes pulse{
+
+0%{opacity:1;}
+
+50%{opacity:.5;}
+
+100%{opacity:1;}
+
+}
+
+/*=========================================
+AI ASSISTANT
+=========================================*/
+
+.ai-assistant{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#23314b);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.assistant-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.assistant-title{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.assistant-avatar{
+
+width:70px;
+
+height:70px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+font-size:30px;
+
+color:white;
+
+}
+
+.assistant-title h2{
+
+color:white;
+
+}
+
+.assistant-title p{
+
+color:#94a3b8;
+
+}
+
+.assistant-status{
+
+padding:8px 18px;
+
+background:#16a34a;
+
+border-radius:25px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.chat-window{
+
+background:#111827;
+
+border-radius:18px;
+
+padding:25px;
+
+min-height:220px;
+
+max-height:350px;
+
+overflow-y:auto;
+
+margin-bottom:25px;
+
+}
+
+.ai-message{
+
+background:#2563eb;
+
+padding:18px;
+
+border-radius:16px;
+
+color:white;
+
+line-height:1.8;
+
+width:75%;
+
+}
+
+.user-message{
+
+background:#334155;
+
+padding:18px;
+
+border-radius:16px;
+
+color:white;
+
+margin:20px 0 20px auto;
+
+width:75%;
+
+}
+
+.quick-actions{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:25px;
+
+}
+
+.quick-actions button{
+
+padding:12px 18px;
+
+border:none;
+
+background:#1f2937;
+
+color:white;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.quick-actions button:hover{
+
+background:#2563eb;
+
+}
+
+.chat-input{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.chat-input input{
+
+flex:1;
+
+padding:16px;
+
+background:#111827;
+
+border:none;
+
+border-radius:15px;
+
+color:white;
+
+font-size:15px;
+
+}
+
+.chat-input button{
+
+width:60px;
+
+border:none;
+
+border-radius:15px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+/*=========================================
+MARKET INTELLIGENCE
+=========================================*/
+
+.market-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#23314b);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.market-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.market-header h2{
+
+color:white;
+
+}
+
+.market-live{
+
+background:#16a34a;
+
+padding:8px 18px;
+
+border-radius:25px;
+
+color:white;
+
+font-weight:bold;
+
+animation:pulse 2s infinite;
+
+}
+
+.market-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.market-card{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+transition:.35s;
+
+border-top:4px solid #2563eb;
+
+}
+
+.market-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.market-card i{
+
+font-size:32px;
+
+color:#3b82f6;
+
+margin-bottom:18px;
+
+}
+
+.market-card h4{
+
+color:#94a3b8;
+
+margin-bottom:12px;
+
+}
+
+.market-card h2{
+
+color:white;
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+.market-card p{
+
+color:#cbd5e1;
+
+}
+
+/*=========================================
+EXECUTIVE ALERT CENTER
+=========================================*/
+
+.alerts-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#1c2436,#263349);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.alerts-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.alerts-header h2{
+
+color:white;
+
+}
+
+.alerts-header p{
+
+color:#94a3b8;
+
+margin-top:5px;
+
+}
+
+.alert-count{
+
+background:#2563eb;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.alerts-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.alert-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:20px;
+
+border-radius:18px;
+
+background:#111827;
+
+transition:.3s;
+
+}
+
+.alert-card:hover{
+
+transform:translateX(8px);
+
+}
+
+.alert-icon{
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+font-size:22px;
+
+color:white;
+
+}
+
+.success .alert-icon{
+
+background:#16a34a;
+
+}
+
+.warning .alert-icon{
+
+background:#f59e0b;
+
+}
+
+.info .alert-icon{
+
+background:#2563eb;
+
+}
+
+.danger .alert-icon{
+
+background:#dc2626;
+
+}
+
+.alert-card h4{
+
+color:white;
+
+margin-bottom:6px;
+
+}
+
+.alert-card p{
+
+color:#cbd5e1;
+
+}
+
+.alert-time{
+
+color:#94a3b8;
+
+font-size:13px;
+
+}
+
+/*=========================================
+LIVE BUSINESS ACTIVITY
+=========================================*/
+
+.activity-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#24344d);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.activity-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.activity-header h2{
+
+color:white;
+
+}
+
+.activity-live{
+
+background:#16a34a;
+
+padding:8px 18px;
+
+border-radius:25px;
+
+color:white;
+
+font-weight:bold;
+
+animation:pulse 2s infinite;
+
+}
+
+.timeline{
+
+position:relative;
+
+margin-left:20px;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:80px;
+
+top:0;
+
+bottom:0;
+
+width:3px;
+
+background:#2563eb;
+
+}
+
+.timeline-item{
+
+display:grid;
+
+grid-template-columns:70px 30px 1fr;
+
+gap:20px;
+
+align-items:flex-start;
+
+margin-bottom:30px;
+
+position:relative;
+
+}
+
+.timeline-time{
+
+color:#94a3b8;
+
+font-weight:bold;
+
+}
+
+.timeline-dot{
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+margin-top:5px;
+
+z-index:2;
+
+}
+
+.timeline-content{
+
+background:#111827;
+
+padding:18px;
+
+border-radius:15px;
+
+}
+
+.timeline-content h4{
+
+color:white;
+
+margin-bottom:8px;
+
+}
+
+.timeline-content p{
+
+color:#cbd5e1;
+
+}
+
+.success{
+
+background:#22c55e;
+
+}
+
+.info{
+
+background:#3b82f6;
+
+}
+
+.warning{
+
+background:#f59e0b;
+
+}
+
+.danger{
+
+background:#ef4444;
+
+}
+
+/*=========================================
+EXECUTIVE REPORT CENTER
+=========================================*/
+
+.report-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#24344d);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.report-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+margin-bottom:35px;
+
+}
+
+.report-header h2{
+
+color:white;
+
+font-size:30px;
+
+}
+
+.report-header p{
+
+color:#94a3b8;
+
+margin-top:8px;
+
+}
+
+.report-actions{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.report-btn{
+
+padding:14px 24px;
+
+border:none;
+
+border-radius:12px;
+
+background:#334155;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+font-weight:600;
+
+}
+
+.report-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.report-btn.primary{
+
+background:#dc2626;
+
+}
+
+.report-btn.success{
+
+background:#16a34a;
+
+}
+
+.report-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.report-card{
+
+background:#111827;
+
+padding:30px;
+
+border-radius:18px;
+
+text-align:center;
+
+transition:.35s;
+
+border-top:4px solid #2563eb;
+
+}
+
+.report-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.report-card i{
+
+font-size:42px;
+
+color:#3b82f6;
+
+margin-bottom:20px;
+
+}
+
+.report-card h3{
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+.report-card p{
+
+color:#cbd5e1;
+
+margin-bottom:25px;
+
+line-height:1.8;
+
+}
+
+.report-card button{
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.report-card button:hover{
+
+background:#3b82f6;
+
+}
+
+/*=========================================
+EXECUTIVE CONTROL PANEL
+=========================================*/
+
+.control-panel{
+
+margin:35px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#22314b);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.control-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.control-header h2{
+
+color:white;
+
+}
+
+.system-status{
+
+background:#16a34a;
+
+padding:8px 18px;
+
+border-radius:25px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.control-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.control-card{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.control-card label{
+
+color:#94a3b8;
+
+margin-bottom:10px;
+
+}
+
+.control-card select{
+
+padding:14px;
+
+background:#111827;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+font-size:15px;
+
+}
+
+.control-card button{
+
+padding:14px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.control-card button:hover{
+
+background:#3b82f6;
+
+transform:translateY(-3px);
+
+}
+
+/*=========================================
+GLOBAL SEARCH
+=========================================*/
+
+.search-center{
+
+margin:40px 0;
+
+padding:30px;
+
+background:linear-gradient(145deg,#182132,#24344d);
+
+border-radius:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.search-header{
+
+margin-bottom:25px;
+
+}
+
+.search-header h2{
+
+color:white;
+
+margin-bottom:8px;
+
+}
+
+.search-header p{
+
+color:#94a3b8;
+
+}
+
+.search-box{
+
+display:flex;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+padding:18px;
+
+border:none;
+
+border-radius:14px;
+
+background:#111827;
+
+color:white;
+
+font-size:16px;
+
+}
+
+.search-box button{
+
+width:70px;
+
+border:none;
+
+border-radius:14px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+font-size:20px;
+
+}
+
+.search-results{
+
+background:#111827;
+
+padding:25px;
+
+border-radius:18px;
+
+min-height:120px;
+
+color:#cbd5e1;
 
 }

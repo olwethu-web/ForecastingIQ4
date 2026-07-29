@@ -53,7 +53,7 @@ def forecast():
 @app.route("/api/insights")
 def get_insights():
 
-    df = pd.read_csv("sales.csv")
+    df = pd.read_csv("data/sales.csv")
 
     latest = df.iloc[-1]
     previous = df.iloc[-2]

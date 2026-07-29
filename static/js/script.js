@@ -594,47 +594,34 @@ if(themeButton){
 
 }
 
-/* ==========================================
-   Live Clock
-========================================== */
+/* ===========================
+   LIVE DATE & TIME
+============================*/
 
-function updateClock(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    const profileDate=document.querySelector(".profile small");
+    function updateDateTime() {
 
-    if(!profileDate) return;
+        const now = new Date();
 
-    const now=new Date();
+        document.getElementById("liveDate").textContent =
+            now.toLocaleDateString("en-GB", {
+                weekday: "short",
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
 
-    const date=now.toLocaleDateString("en-ZA",{
+        document.getElementById("liveTime").textContent =
+            now.toLocaleTimeString("en-GB");
 
-        weekday:"short",
+    }
 
-        day:"numeric",
+    updateDateTime();
 
-        month:"short",
+    setInterval(updateDateTime, 1000);
 
-        year:"numeric"
-
-    });
-
-    const time=now.toLocaleTimeString("en-ZA",{
-
-        hour:"2-digit",
-
-        minute:"2-digit",
-
-        second:"2-digit"
-
-    });
-
-    profileDate.textContent=`${date} | ${time}`;
-
-}
-
-setInterval(updateClock,60000);
-
-updateClock();
+});
 
 /* ==========================================
    Auto Refresh Simulation
@@ -685,6 +672,23 @@ function updateGreeting(){
 }
 
 updateGreeting();
+
+const copilotButton = document.querySelector(".copilot-btn");
+
+if (copilotButton) {
+
+    copilotButton.addEventListener("click", () => {
+
+        document.getElementById("aiSummary").innerHTML = `
+            📈 Revenue is forecast to increase by <strong>18%</strong>.<br><br>
+            🤖 Customer growth remains strong.<br><br>
+            💰 Profit margin is expected to improve over the next quarter.<br><br>
+            ⚠ Continue monitoring operating expenses.
+        `;
+
+    });
+
+}
 
 /* ==========================================
    Table Hover Highlight
@@ -924,6 +928,22 @@ function updateDashboard() {
 
 }
 
+document.getElementById("analyzeBtn").addEventListener("click", function(){
+
+    document.getElementById("performanceSummary").innerHTML =
+    "Revenue has increased by <strong>18%</strong>. Customer growth remains positive and profit margins are stable.";
+
+    document.getElementById("opportunitySummary").innerHTML =
+    "Focus marketing on premium products and expand customer loyalty initiatives.";
+
+    document.getElementById("riskSummary").innerHTML =
+    "Operating expenses are trending upward. Monitor costs and inventory closely.";
+
+    document.getElementById("recommendationSummary").innerHTML =
+    "Maintain current sales momentum while investing in customer retention and demand forecasting.";
+
+});
+
 /*
 ==========================================
 START APPLICATION
@@ -949,6 +969,176 @@ START APPLICATION
         currentPeriod = "yearly";
         updateDashboard();
     });
+
+});
+
+function quickQuestion(question){
+
+document.getElementById("userQuestion").value = question;
+
+sendQuestion();
+
+}
+
+function sendQuestion(){
+
+const input = document.getElementById("userQuestion");
+
+const question = input.value.trim();
+
+if(question==="") return;
+
+const chat = document.getElementById("chatWindow");
+
+chat.innerHTML += `
+<div class="user-message">
+${question}
+</div>
+`;
+
+let response = "";
+
+if(question.toLowerCase().includes("forecast")){
+
+response="📈 AI Forecast: Revenue is expected to increase by approximately 18% over the next month based on current trends.";
+
+}
+
+else if(question.toLowerCase().includes("revenue")){
+
+response="💰 Revenue is performing above target. Marketing campaigns and customer growth are contributing positively.";
+
+}
+
+else if(question.toLowerCase().includes("customer")){
+
+response="👥 Customer growth remains healthy. Retention is stable, with opportunities to increase loyalty through targeted promotions.";
+
+}
+
+else if(question.toLowerCase().includes("risk")){
+
+response="⚠ Current business risk is LOW. Continue monitoring operating expenses and inventory levels.";
+
+}
+
+else{
+
+response="🤖 I'm ready to assist. In a future version, I'll analyze your live business data and provide personalized recommendations.";
+
+}
+
+setTimeout(()=>{
+
+chat.innerHTML += `
+<div class="ai-message">
+${response}
+</div>
+`;
+
+chat.scrollTop = chat.scrollHeight;
+
+},600);
+
+input.value="";
+
+}
+
+document.getElementById("refreshDashboard").addEventListener("click", () => {
+
+    // Refresh dashboard data
+    if (typeof loadDashboardData === "function") {
+        loadDashboardData();
+    }
+
+    // Refresh AI insights
+    if (typeof loadInsights === "function") {
+        loadInsights();
+    }
+
+    // Refresh forecast chart
+    if (typeof loadForecastChart === "function") {
+        loadForecastChart();
+    }
+
+    // Rotate refresh icon
+    const btn = document.getElementById("refreshDashboard");
+    const icon = btn.querySelector("i");
+
+    icon.style.transition = "transform .8s";
+    icon.style.transform = "rotate(360deg)";
+
+    setTimeout(() => {
+        icon.style.transform = "rotate(0deg)";
+    }, 800);
+
+    alert("Dashboard refreshed successfully.");
+
+});
+
+const dashboardItems = [
+
+"Revenue Dashboard",
+
+"Total Sales",
+
+"Net Profit",
+
+"Customers",
+
+"AI Forecast",
+
+"Executive Report",
+
+"Revenue Analysis",
+
+"Customer Insights",
+
+"Business Risks",
+
+"Market Intelligence",
+
+"Executive Alerts",
+
+"Performance Analytics"
+
+];
+
+const searchInput = document.getElementById("globalSearch");
+
+const results = document.getElementById("searchResults");
+
+searchInput.addEventListener("keyup", function(){
+
+const keyword = this.value.toLowerCase();
+
+const matches = dashboardItems.filter(item =>
+
+item.toLowerCase().includes(keyword)
+
+);
+
+if(keyword===""){
+
+results.innerHTML="<p>Start typing to search...</p>";
+
+return;
+
+}
+
+if(matches.length===0){
+
+results.innerHTML="<p>No matching results found.</p>";
+
+return;
+
+}
+
+results.innerHTML = matches.map(item =>
+
+`<div class="search-item">🔍 ${item}</div>`
+
+).join("");
 
 });
 
