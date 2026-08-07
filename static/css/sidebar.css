@@ -1,0 +1,237 @@
+/* ==========================================
+SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    background:#111827;
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+/* Logo */
+
+.logo-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.logo{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:12px;
+
+}
+
+.logo-section h2{
+
+    color:white;
+
+    font-size:22px;
+
+    margin:0;
+
+}
+
+.logo-section span{
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+/* User */
+
+.user-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:35px;
+
+}
+
+.user-avatar{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    font-size:20px;
+
+}
+
+.user-card h3{
+
+    color:white;
+
+    font-size:16px;
+
+    margin:0;
+
+}
+
+.user-card p{
+
+    color:#94a3b8;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+}
+
+/* Menu */
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.sidebar-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar-menu a i{
+
+    width:22px;
+
+    font-size:18px;
+
+}
+
+.sidebar-menu a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateX(6px);
+
+}
+
+.sidebar-menu .active{
+
+    background:#2563eb;
+
+    color:white;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+
+}
+
+/* Bottom */
+
+.sidebar-bottom{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.sidebar-bottom a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar-bottom a:hover{
+
+    background:#ef4444;
+
+    color:white;
+
+}

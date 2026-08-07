@@ -1,0 +1,185 @@
+/* ===================================================
+   RESPONSIVE DESIGN
+=================================================== */
+
+@media(max-width:1200px){
+
+    .kpi-cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .chart-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chart-card.large{
+
+        grid-column:span 1;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:80px;
+
+        padding:20px 10px;
+
+    }
+
+    .logo h2{
+
+        display:none;
+
+    }
+
+    .menu li a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    .menu li a i{
+
+        font-size:20px;
+
+        margin:0;
+
+    }
+
+    .logout a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    .logout a i{
+
+        font-size:20px;
+
+    }
+
+    .main-content{
+
+        margin-left:80px;
+
+        width:calc(100% - 80px);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .top-header{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .search-box{
+
+        max-width:100%;
+
+    }
+
+    .header-right{
+
+        justify-content:space-between;
+
+    }
+
+    .kpi-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    body{
+
+        display:block;
+
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .logo h2{
+
+        display:block;
+
+    }
+
+    .menu{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .menu li a{
+
+        font-size:14px;
+
+        justify-content:flex-start;
+
+    }
+
+    .logout{
+
+        display:none;
+
+    }
+
+    .main-content{
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .profile{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    table{
+
+        min-width:700px;
+
+    }
+
+}

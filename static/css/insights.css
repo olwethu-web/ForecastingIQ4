@@ -1,0 +1,59 @@
+/* ==========================
+AI INSIGHTS
+========================== */
+
+.insights-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap: 25px;
+
+}
+
+.insight-chart{
+
+    width:260px;
+
+    height:260px;
+
+}
+
+.insight-chart canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+/* Sidebar Scrollbar */
+
+.sidebar::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.sidebar::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover{
+
+    background:#60a5fa;
+
+}
