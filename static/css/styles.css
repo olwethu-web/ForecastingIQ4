@@ -1066,3 +1066,13 @@ body.light-mode .notification{
     color:#111827;
 
 }
+
+.chart-card {
+    position: relative;
+    min-height: 380px;
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: 300px !important;
+}

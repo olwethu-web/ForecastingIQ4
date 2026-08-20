@@ -492,7 +492,7 @@ if(notificationButton){
    Search Box
 ========================================== */
 
-const searchInput = document.querySelector(".search-box input");
+const headerSearchInput = document.querySelector(".search-box input");
 
 if(searchInput){
 
